@@ -1,4 +1,11 @@
 map_monkey
 ==========
 
-Google maps API helper
+Google Maps API helper
+- Under development -
+
+Example of usage:
+
+pos = Position.new
+pos.lat('göteborg', 'kabelgatan', '41457')
+>> "57.6896877"
