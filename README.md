@@ -6,6 +6,6 @@ Google Maps API helper
 
 Example of usage:
 
-pos = Position.new
+pos = Position.new \n
 pos.lat('göteborg', 'kabelgatan', '41457')
 >> "57.6896877"
