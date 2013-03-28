@@ -5,22 +5,16 @@ class Position
 
 	attr_accessor :city, :street, :zip
 
-	def initialize(city, street, zip)
-		self.city = URI.encode(city)
-		self.street = URI.encode(street)
-		self.zip = URI.encode(zip)
-	end
-
 	def city(city)
-		@city = URI.encode(city)
+		self.city
 	end
 
 	def street(street)
-		@street = URI.encode(street)
+    self.street
 	end
 
 	def zip(zip)
-		@zip = URI.encode(zip)
+    self.zip
 	end
 
 	def lat

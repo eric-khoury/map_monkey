@@ -15,10 +15,7 @@ Example of usage:
 >> "57.6896877"
 
 ==========
-To fix:
-- Everything <br />
-- No checking for getting back multiple results <br />
-- Refactoring <br />
+Bug: No checking for getting back multiple results <br />
 
 ==========
 Cheers
