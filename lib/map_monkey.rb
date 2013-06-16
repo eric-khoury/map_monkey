@@ -23,10 +23,16 @@ class Position
     URI.encode(zip)
 	end
 
-  def lat
+  def url
     url = "http://maps.googleapis.com/maps/api/geocode/xml?address=#{@street}#{@zip}#{@city}&sensor=false"
-    xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    doc = REXML::Document.new(xml_data)
+  end
+
+  def get_data
+    data = Net::HTTP.get_response(URI.parse(url)).body
+  end
+
+  def lat
+    doc = REXML::Document.new(get_data)
 
     doc.elements.each('GeocodeResponse/result/geometry/location/lat') do |ele|
       self.lat = ele.text
@@ -36,9 +42,7 @@ class Position
   end
 
   def lng
-    url = "http://maps.googleapis.com/maps/api/geocode/xml?address="+self.street+self.zip+self.city+"&sensor=false"
-    xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    doc = REXML::Document.new(xml_data)
+    doc = REXML::Document.new(get_data)
 
     doc.elements.each('GeocodeResponse/result/geometry/location/lng') do |ele|
       lng = ele.text
@@ -48,9 +52,7 @@ class Position
   end
 
   def lat_lng
-    url = "http://maps.googleapis.com/maps/api/geocode/xml?address="+self.street+self.zip+self.city+"&sensor=false"
-    xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    doc = REXML::Document.new(xml_data)
+    doc = REXML::Document.new(get_data)
 
     doc.elements.each('GeocodeResponse/result/geometry/location/lat') do |ele|
       lat = ele.text
