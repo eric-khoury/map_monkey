@@ -1,7 +1,5 @@
 map_monkey
 ==========
-
-What it does:
 Retrievs lat and long positions from Google Maps Api, with parameters city, street and zip code.
 
 Install:
