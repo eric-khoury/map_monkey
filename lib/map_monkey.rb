@@ -5,26 +5,26 @@ class Position
 
 	attr_accessor :city, :street, :zip
 
-	def initialize(city, street, zip)
-		self.city = city(city)
-		self.street = street(street)
-		self.zip = zip(zip)
+	def initialize(city = "", street = "", zip = "")
+		@city = city(city)
+		@street = street(street)
+		@zip = zip(zip)
 	end
 
 	def city(city)
-		@city = URI.encode(city)
+		URI.encode(city)
 	end
 
 	def street(street)
-		@street = URI.encode(street)
+		URI.encode(street)
 	end
 
 	def zip(zip)
-		@zip = URI.encode(zip)
+		URI.encode(zip)
 	end
 
 	def lat
-		url = "http://maps.googleapis.com/maps/api/geocode/xml?address="+self.street+self.zip+self.city+"&sensor=false"
+		url = "http://maps.googleapis.com/maps/api/geocode/xml?address=#{@street}#{@zip}#{@city}&sensor=false"
 		xml_data = Net::HTTP.get_response(URI.parse(url)).body
 		doc = REXML::Document.new(xml_data)
 
