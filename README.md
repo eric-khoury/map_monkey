@@ -15,5 +15,5 @@ Example of usage:
 >> "57.6896877"
 
 ==========
-- No checking for getting back multiple results <br />
+No checking for getting back multiple results <br />
 ==========
