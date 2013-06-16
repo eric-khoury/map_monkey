@@ -24,11 +24,11 @@ class Position
 	end
 
   def url
-    url = "http://maps.googleapis.com/maps/api/geocode/xml?address=#{@street}#{@zip}#{@city}&sensor=false"
+    "http://maps.googleapis.com/maps/api/geocode/xml?address=#{@street}#{@zip}#{@city}&sensor=false"
   end
 
   def get_data
-    data = Net::HTTP.get_response(URI.parse(url)).body
+    Net::HTTP.get_response(URI.parse(url)).body
   end
 
   def lat
