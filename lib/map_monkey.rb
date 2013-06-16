@@ -6,9 +6,9 @@ class Position
 	attr_accessor :city, :street, :zip
 
 	def initialize(city, street, zip)
-		self.city = URI.encode(city)
-		self.street = URI.encode(street)
-		self.zip = URI.encode(zip)
+		self.city = city(city)
+		self.street = street(street)
+		self.zip = zip(zip)
 	end
 
 	def city(city)
@@ -45,7 +45,7 @@ class Position
 		end
 
 		lng
-	end	
+	end
 
 	def lat_lng
 		url = "http://maps.googleapis.com/maps/api/geocode/xml?address="+self.street+self.zip+self.city+"&sensor=false"
