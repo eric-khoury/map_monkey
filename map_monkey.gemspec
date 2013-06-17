@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'map_monkey'
-  s.version     = '0.0.4'
-  s.date        = '2013-03-11'
+  s.version     = '0.0.5'
+  s.date        = '2013-06-17'
   s.summary     = "Google maps position retriever"
   s.description = "Returns lat and long positions from Google Maps API."
   s.authors     = ["Eric Khoury"]
