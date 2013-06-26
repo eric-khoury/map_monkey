@@ -52,8 +52,8 @@ module MapMonkey
     end
 
     def get_lat_lng
-      lat = get_lng
-      lng = get_lat
+      lat = get_lat
+      lng = get_lng
       lat_lng = [lat, lng]
     end
   end
