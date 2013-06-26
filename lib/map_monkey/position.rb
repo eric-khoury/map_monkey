@@ -3,7 +3,7 @@ require 'rexml/document'
 
 module MapMonkey
   class Position
-    attr_accessor :city, :street, :zip, :lat, :lng
+    attr_accessor :city, :street, :zip
 
     def initialize(options = {})
       @city   = URI.encode(options.fetch(:city, ""))
