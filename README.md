@@ -8,8 +8,8 @@ Install:
 ==========
 Example of usage:
 
-`pos = Position.new` <br />
-`pos.lat('göteborg', 'kabelgatan', '41457')`<br />
+`pos = MapMonkey::Position.new(city: 'göteborg', street: 'kabelgatan', zip: '41457')` <br />
+`pos.get_lat`<br />
 => "57.6896877"
 
 ==========
