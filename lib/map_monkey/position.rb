@@ -52,19 +52,9 @@ module MapMonkey
     end
 
     def get_lat_lng
-      doc = REXML::Document.new(get_data)
-
-      doc.elements.each('GeocodeResponse/result/geometry/location/lat') do |ele|
-        @lat = ele.text
-      end
-
-      doc.elements.each('GeocodeResponse/result/geometry/location/lng') do |ele|
-        @lng = ele.text
-      end
-
+      lat = get_lng
+      lng = get_lat
       lat_lng = [lat, lng]
-
-      lat_lng
     end
   end
 end
