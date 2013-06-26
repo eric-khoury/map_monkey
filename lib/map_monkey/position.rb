@@ -12,15 +12,15 @@ module MapMonkey
     end
 
     def city
-      URI.encode(@city)
+      @city
     end
 
     def street
-      URI.encode(@street)
+      @street
     end
 
     def zip
-      URI.encode(@zip)
+      @zip
     end
 
     def url
@@ -52,9 +52,7 @@ module MapMonkey
     end
 
     def get_lat_lng
-      lat = get_lat
-      lng = get_lng
-      lat_lng = [lat, lng]
+      [get_lat, get_lng]
     end
   end
 end
