@@ -22,22 +22,19 @@ describe "position" do
 
   it "can get lat coordinate" do
     pos = MapMonkey::Position.new(city: "gothenburg", street: "kabelgatan", zip: "41457")
-    pos.stub(:get_lat) { "x and y" }
 
-    pos.get_lat.should == "x and y"
+    pos.get_lat.should == "57.6892275"
   end
 
   it "can get lng coordinate" do
     pos = MapMonkey::Position.new(city: "gothenburg", street: "kabelgatan", zip: "41457")
-    pos.stub(:get_lng) { "x and y" }
 
-    pos.get_lng.should == "x and y"
+    pos.get_lng.should == "11.9253258"
   end
 
   it "can get lat_lng coordinates" do
     pos = MapMonkey::Position.new(city: "gothenburg", street: "kabelgatan", zip: "41457")
-    pos.stub(:get_lat_lng) { "x and y in an array" }
 
-    pos.get_lat_lng.should == "x and y in an array"
+    pos.get_lat_lng.should == ["57.6892275", "11.9253258"]
   end
 end
