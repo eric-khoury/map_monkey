@@ -27,12 +27,12 @@ module MapMonkey
       "http://maps.googleapis.com/maps/api/geocode/xml?address=#{street}#{zip}#{city}&sensor=false"
     end
 
-    def get_data
+    def response
       Net::HTTP.get_response(URI.parse(url)).body
     end
 
     def get_lat
-      doc = REXML::Document.new(get_data)
+      doc = REXML::Document.new(response)
 
       doc.elements.each('GeocodeResponse/result/geometry/location/lat') do |ele|
         @lat = ele.text
@@ -42,7 +42,7 @@ module MapMonkey
     end
 
     def get_lng
-      doc = REXML::Document.new(get_data)
+      doc = REXML::Document.new(response)
 
       doc.elements.each('GeocodeResponse/result/geometry/location/lng') do |ele|
         @lng = ele.text
