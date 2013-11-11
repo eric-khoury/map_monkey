@@ -5,10 +5,10 @@ module MapMonkey
   class Position
     attr_accessor :city, :street, :zip
 
-    def initialize(options = {})
-      @city   = URI.encode(options.fetch(:city, ""))
-      @street = URI.encode(options.fetch(:street, ""))
-      @zip    = URI.encode(options.fetch(:zip, ""))
+    def initialize(params)
+      @city   = URI.encode(params.fetch(:city, ""))
+      @street = URI.encode(params.fetch(:street, ""))
+      @zip    = URI.encode(params.fetch(:zip, ""))
     end
 
     def city
