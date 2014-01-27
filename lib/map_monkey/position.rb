@@ -11,18 +11,6 @@ module MapMonkey
       @zip    = URI.encode(params.fetch(:zip, ""))
     end
 
-    def city
-      @city
-    end
-
-    def street
-      @street
-    end
-
-    def zip
-      @zip
-    end
-
     def url
       "http://maps.googleapis.com/maps/api/geocode/xml?address=#{street}#{zip}#{city}&sensor=false"
     end
